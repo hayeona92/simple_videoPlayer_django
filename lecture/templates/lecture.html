@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<div class="row mt-5">
+  <div class="col-12">
+    <table class="table table-light">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">lecture</th>
+          <th scope="col">lecturer</th>
+        </tr>
+      </thead>
+      <tbody class="text-dark">
+        {% for lecture in LectureList %}
+        <tr>
+          <th scope="row">{{ lecture.id }}</th>
+          <th><a id="lecture-{{ lecture.id }}" onmouseenter="lecture_detail({{ lecture.id }});"
+              onmouseleave="lecture_leave({{ lecture.id }});" href="/lecture/{{ lecture.id }}">{{ lecture.course_name }}</a>
+          </th>
+          <th>{{ lecture.lecturer }}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

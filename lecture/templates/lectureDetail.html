@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contents %}
+<div class="row mt-5">
+  <div class="col-12">
+    <div style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Course Name:{{ lecture.course_name }}</h5>
+        <h6 class='card-title'>lecturer: {{ lecture.lecturer }}</h6>
+      </div>
+      <div id="player">
+        <video width="800" height="450" autoplay="true" controls>
+          <source src="../../../media/{{lecture.file}}" type='video/mp4'>
+
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <a href="/lecture/">back</a>
+    </div>
+  </div>
+
+  {% endblock %}
